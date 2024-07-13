@@ -1,0 +1,127 @@
+@import "../../css-config/mixins.scss";
+
+@font-face {
+    font-family: LogoFont;
+    src: url(../../assets/ParkLaneNF.ttf);
+  }
+
+.main-header {
+    width: 100%;
+    padding: 0 20PX;
+    background-color: #212121;
+    color: white;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    z-index: 99;
+
+    // handle the css for desktop application to make it more responsive (I am using mixins (sass css))
+    @include md {
+        padding: 0 40PX;
+    }
+
+    .header-container {
+        display: flex; // divs align from left to right
+        justify-content: space-between; // divs have equal space assgine to them 
+        align-items: center; // divs align vertically
+        height: 50px;
+        max-width: 90%;
+        margin: 0 auto;
+
+        @include md {
+            height: 80px;
+        }
+        
+        .left {
+            list-style-type: none;
+            display: none;
+            gap: 25px;
+
+            @include md {
+                display: flex;
+            }
+
+            li {
+                tab-size: 40px;
+                font-weight: 600;
+                text-transform: uppercase; // changes the text to uppercase
+                cursor: pointer; // changes the cursor to pointer
+            }
+
+        }
+
+        .center {
+            font-size: 22px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: LogoFont;
+
+
+            @include md {
+                font-size: 34px;
+                // centering the Store Name
+                position: absolute; // position absolute = always center
+                left: 50%; // absolute from left should be 50%
+                transform: translateX(-50%); // then translate -50x
+            }
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            @include md {
+                gap: 25px;
+
+                svg {
+                    font-size: 24px;
+                }
+            }
+
+            svg {
+                gap: 20px;
+                cursor: pointer;
+            }
+
+            .cart-icon {
+                position: relative;
+
+                span {
+                    min-width: 20px;
+                    text-align: center;
+                    background-color:rgb(47, 68, 185);
+                    padding: 2.5px;
+                    position: absolute;
+                    top: -5px;
+                    right: -12px;
+                    font-size: 12px;
+                    line-height: 1;
+                    border-radius: 10px;
+                }
+            }
+
+            .cart-count {
+
+            }
+        }
+    }
+
+    &.sticky-header {
+        position: sticky;
+        top: 0;
+        animation: stickyHeader 0.3s ease forwards;
+    }
+}
+
+@keyframes stickyHeader {
+    0% {transform: translateY(-80px);}
+    100% {transform: translateY(0);}
+}
+
+a { color:red } /* Globally */
+
+/* Each state */
+
+a:visited { text-decoration: none; color:#fff; outline: none;}
+a:hover { text-decoration: none; color:#fff; outline: none;}
+a:focus { text-decoration: none; color:#fff; outline: none; }
+a:hover, a:active { text-decoration: none; color:#fff; outline: none;}

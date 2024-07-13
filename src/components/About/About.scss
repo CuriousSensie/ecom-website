@@ -1,0 +1,62 @@
+.about {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+
+    section {
+        margin-bottom: 40px;
+
+        h1, h2 {
+            color: rgb(25, 65, 25);
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+
+            li {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .hero {
+        text-align: center;
+
+        h1 {
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+
+    .our-mission, .our-story, .our-values, .team, .contact-us {
+        h2 {
+            font-size: 24px;
+        }
+
+        p, ul {
+            font-size: 16px;
+        }
+    }
+
+    .team {
+        text-align: center;
+
+        p {
+            margin-top: 20px;
+        }
+    }
+
+    .contact-us {
+        text-align: center;
+    }
+}

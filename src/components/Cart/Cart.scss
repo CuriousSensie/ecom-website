@@ -1,0 +1,168 @@
+@import "../../css-config/mixins.scss";
+
+
+.cart-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    display: flex;
+    z-index: 99;
+
+
+    .opac-layer {
+        background-color: rgba(0,0,0,0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .cart-content {
+        width: 70%;
+        height: 100%; 
+        background: white;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        transform: translateX(100%);
+        animation: slideCart 0.3s ease forwards;
+
+        @include md {
+            background: white;
+            width: 340px;
+        }
+
+        .cart-header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 20px 15px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+
+            @include md {
+                padding: 30px;
+            }
+
+            .heading {
+                flex-grow: 1;
+                font-size: 20px;
+                font-weight: 700;
+                margin: 0;
+                line-height: 1;
+                text-transform: uppercase;
+
+                
+                .close-button {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    cursor: pointer;
+
+                    svg {
+                        font-size: 18px;
+                    }
+    
+                    .close-text {
+                        text-transform: uppercase;
+                        font-size: 14px;
+    
+                        &:hover {
+                            opacity: 0.5;
+                        }
+                    }
+                }
+            }
+        }
+
+        .empty-cart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 100px;
+
+            svg {
+                font-size: 120px;
+                opacity: 0.1;
+            }
+
+            .return-cta {
+                border: 0;
+                outline: 0;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                font-size: 13px;
+                color: white;
+                background-color: rgb(25, 65, 25);
+                border-bottom: 3px solid rgb(44, 119, 44);
+                flex-grow: 1;
+                display: flex;
+                height: 40px;
+                width: 150px;
+
+                @include md {
+                    flex-grow: unset;
+                }
+            }
+        }
+
+        .cart-footer {
+            border-top: 1px solid rgba(0,0,0,0.1);
+
+            .subtotal {
+                padding: 20px 15px;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+                display: flex;
+                justify-content: space-between;
+
+                .text {
+                    margin-bottom: 0;
+                    font-size: 20px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+
+                    &.total {
+                        color: rgb(25, 65, 25);
+                    }
+                }   
+            }
+
+            .button {
+                padding: 20px 15px;
+                
+                .checkout-cta {
+                    border: 0;
+                    outline: 0;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    font-size: 16px;
+                    color: white;
+                    background-color: rgb(25, 65, 25);
+                    border-bottom: 3px solid rgb(44, 119, 44);
+                    flex-grow: 1;
+                    display: flex;
+                    height: 50px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+}
+
+@keyframes slideCart {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+    
+}

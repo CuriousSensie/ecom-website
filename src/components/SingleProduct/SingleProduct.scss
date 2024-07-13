@@ -1,0 +1,186 @@
+@import "../../css-config/mixins.scss";
+
+.single-product-main-content {
+    margin: 20px 0;
+
+    @include md {
+        margin: 75px 0;
+    }
+
+    .layout {
+        max-width: calc(100% - 20px);
+        margin: 0 auto;
+
+        @include md {
+            max-width: 1200px;
+        }
+
+        .single-product-page {
+            display: flex;
+            flex-direction: column;
+
+            @include md {
+                flex-direction: row;
+            }
+
+            .left {
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.05);
+                flex-shrink: 0;
+                box-sizing: border-box; // Ensure padding and border are included in the element's width and height
+                display: flex; // Enable flexbox on .left div
+                justify-content: center; // Center horizontally
+                align-items: center; // Center vertically
+    
+                @include md {
+                    width: 550px;
+                    height: 550px;
+                }
+    
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                    display: block;
+                    margin: auto; // Ensure the image is centered
+                }
+            }
+
+            .right {
+                display: flex;
+                flex-direction: column;
+                padding-top: 20px;
+
+                @include md {
+                    padding: 0 35px;
+                }
+
+                .name {
+                    font-size: 20px;
+                    line-height: 28px;
+                    margin-bottom: 20px;
+
+                    @include md {
+                        font-size: 24px;
+                        line-height: 32px;
+
+                    }
+                }
+
+                .price {
+                    font-size: 24px;
+                    line-height: 32px;
+                    margin-bottom: 20px;
+                }
+
+                .desc {
+                    font-size: 14px;
+                    line-height: 20px;
+                    margin-bottom: 20px;
+
+                    color: rgba(0, 0, 0, 0.7);
+
+                    @include md {
+                        font-size: 16px;
+                        line-height: 24px;
+                        margin-bottom: 30px;
+                    }
+                }
+
+                .cart-buttons {
+                    display: flex;
+
+                    @include md {
+                        margin-top: 30px;
+                    }
+
+                    .quantity-buttons {
+                        width: fit-content;
+                        display: flex;
+                        border: 2px solid rgba(0, 0, 0, 0.2) ;
+                        margin-right: 10px;
+                        height: 50px;
+
+                        span {
+                            display: flex;
+                            font-size: 18px;
+                            align-items: center;
+                            justify-content: center;
+                            width: 40px;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+
+                            &:hover {
+                                background-color: rgba(0, 0, 0, 0.05);
+                            }
+
+                            &:nth-child(1) {
+                                font-size: 22px;
+                                border-right: 1px solid rgba(0, 0, 0, 0.2);
+                            }
+        
+                            &:nth-child(2) {
+                                width: 50px;
+                            }
+        
+                            &:nth-child(3) {
+                                font-size: 22px;
+                                border-left: 1px solid rgba(0, 0, 0, 0.2);
+                            }
+                        }
+                    }
+
+                    .add-to-cart-button {
+                        border: 0;
+                        outline: 0;
+                        height: 50px;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        font-size: 16px;
+                        color: white;
+                        background-color: rgb(25, 65, 25);
+                        border-bottom: 3px solid rgb(44, 119, 44);
+                        flex-grow: 1;
+                        display: flex;height: 50px;
+                        width: 180px;
+
+                        @include md {
+                            flex-grow: unset;
+                        }
+                    }
+                }
+
+                .divider {
+                    margin: 20px 0;
+                    height: 1px;
+                    width: 100%;
+                    background-color: rgba(0, 0, 0, 0.1);
+
+                    .info-items {
+                        margin-top: 10px;
+                        .text-bold {
+                            font-size: 18px;
+                            font-weight: 500;
+                            display: block;
+
+                            &:nth-child(1) {
+                                margin-bottom: 20px;
+                            }
+
+                            span {
+                                font-size: 16px;
+                                font-weight: 400;
+                                cursor: pointer;
+                                color: rgba(0, 0, 0, 0.7);
+                            }
+
+                            svg {
+                                margin: 0 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
